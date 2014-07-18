@@ -9,11 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
 
+<<<<<<< HEAD
 class MyActivity extends Activity implements View.OnClickListener{
+=======
+public class MyActivity extends Activity implements View.OnClickListener{
+>>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +27,37 @@ class MyActivity extends Activity implements View.OnClickListener{
 
         initializeGood();
 
+<<<<<<< HEAD
         ((Button)findViewById(R.id.btn_sms)).setOnClickListener(this);
 
+=======
+        Button sms = (Button) findViewById(R.id.btn_sms);
+        sms.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MyActivity.this, SmsList.class);
+                startActivity(intent);
+            }
+        });
+
+        Button camera = (Button) findViewById(R.id.btn_camera);
+        camera.setOnClickListener(new Button.OnClickListener()  {
+            public void onClick(View v) {
+                Intent intent = new Intent(MyActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+>>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
     }
 
     private void initializeGood()
     {
         InitializationRunnable init = new InitializationRunnable();
         new Thread(init).start();
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 
     class InitializationRunnable implements Runnable
@@ -57,11 +82,14 @@ class MyActivity extends Activity implements View.OnClickListener{
         }
     }
 
+<<<<<<< HEAD
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(MyActivity.this, SmsList.class);
         startActivity(intent);
     }
+=======
+>>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

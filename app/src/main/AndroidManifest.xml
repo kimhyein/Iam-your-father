@@ -19,7 +19,12 @@
         </activity>
 
         <activity android:name=".SplashActivity"/>
+<<<<<<< HEAD
 
+=======
+        <activity android:name=".CameraActivity"/>
+ 
+>>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
 
         <receiver android:name="SmsList" android:enabled="true">
             <intent-filter>
