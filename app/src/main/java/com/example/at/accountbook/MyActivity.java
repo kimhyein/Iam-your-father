@@ -13,9 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 
-class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnCheckedChangeListener{
-
-    LinearLayout ll;
+class MyActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +27,6 @@ class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnC
 
         ((Button)findViewById(R.id.btn_sms)).setOnClickListener(this);
 
-
-        ll = (LinearLayout) findViewById(R.id.linearLayout);
-
-        RadioGroup rg1 = (RadioGroup) findViewById(R.id.RadioGroup1);
-        rg1.setOnCheckedChangeListener(this);
     }
 
     private void initializeGood()
@@ -64,25 +57,6 @@ class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnC
         }
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup arg0, int arg1) {
-        // TODO Auto-generated method stub
-
-        switch (arg1) {
-
-            case R.id.radioButton4:
-
-                ll.setBackgroundResource(R.drawable.main);
-
-                break;
-
-            case R.id.radioButton5:
-
-                ll.setBackgroundResource(R.drawable.main2);
-                break;
-
-        }
-    }
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(MyActivity.this, SmsList.class);
