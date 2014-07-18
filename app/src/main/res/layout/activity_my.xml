@@ -12,10 +12,10 @@
         android:id="@+id/btn_sms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/message"
         android:layout_alignTop="@+id/btn_camera"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="sms"/>
 
     <Button
         android:id="@+id/btn_camera"
