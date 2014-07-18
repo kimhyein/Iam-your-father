@@ -19,7 +19,9 @@
         </activity>
 
         <activity android:name=".SplashActivity"/>
+
  
+
 
         <receiver android:name="SmsList" android:enabled="true">
             <intent-filter>

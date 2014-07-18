@@ -24,7 +24,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+
+
+
 public class MyActivity extends Activity implements View.OnClickListener{
+
 
     public final static int CAMERA_SHOOT = 100; //intent 에 사용될 요청코드
     public final static int GET_PICTURE = 200;
@@ -32,6 +36,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
     private Bitmap bitmap; // preview 안에 들어갈 이미지.
 
     Uri photo_uri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_my);
 
         initializeGood();
+
 
 
         Button sms = (Button) findViewById(R.id.btn_sms);
@@ -104,6 +110,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 startActivityForResult(intent_getPicture, GET_PICTURE);
             }
         });
+
     }
 
     // 3. =================================================
@@ -128,10 +135,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
         new Thread(init).start();
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
     class InitializationRunnable implements Runnable
     {
@@ -250,6 +254,13 @@ public class MyActivity extends Activity implements View.OnClickListener{
     public void toLog(String str){ //로그 출력용.
         Log.v("@#@===MY===@#@", str);
     }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(MyActivity.this, SmsList.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
