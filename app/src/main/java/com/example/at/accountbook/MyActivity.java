@@ -11,11 +11,11 @@ import android.view.Window;
 import android.widget.Button;
 
 
-<<<<<<< HEAD
-class MyActivity extends Activity implements View.OnClickListener{
-=======
+
+
+
 public class MyActivity extends Activity implements View.OnClickListener{
->>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,9 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
         initializeGood();
 
-<<<<<<< HEAD
         ((Button)findViewById(R.id.btn_sms)).setOnClickListener(this);
 
-=======
+
         Button sms = (Button) findViewById(R.id.btn_sms);
         sms.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -46,7 +45,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 startActivity(intent);
             }
         });
->>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
+
     }
 
     private void initializeGood()
@@ -55,10 +54,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
         new Thread(init).start();
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
     class InitializationRunnable implements Runnable
     {
@@ -82,14 +78,13 @@ public class MyActivity extends Activity implements View.OnClickListener{
         }
     }
 
-<<<<<<< HEAD
+
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(MyActivity.this, SmsList.class);
         startActivity(intent);
     }
-=======
->>>>>>> 9af0dc6810debbc8c5ca0966a9e023a5a61a8154
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
