@@ -19,7 +19,7 @@
         </activity>
 
         <activity android:name=".SplashActivity"/>
-        <activity android:name=".CameraActivity"/>
+        <!--<activity android:name=".CameraActivity"/>-->
  
 
         <receiver android:name="SmsList" android:enabled="true">
@@ -35,5 +35,6 @@
     <uses-permission android:name="android.permission.SEND_SMS" />        //SMS 발송 가능
     <uses-permission android:name="android.permission.RECEIVE_SMS" />   //수신 모니터링
     <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

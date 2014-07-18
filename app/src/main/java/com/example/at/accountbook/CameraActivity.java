@@ -151,6 +151,7 @@ public class CameraActivity extends Activity{
     // 6. =================================================
     // 다른 엑티비티가 실행을 종료하면서 리턴값을 넘겨줬을 때 실행되는 함수.
     // 내가 액티비티를 실행하면서 startActivityForResult 함수로 실행하면 리턴받는것은 이곳에서 처리한다.
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
