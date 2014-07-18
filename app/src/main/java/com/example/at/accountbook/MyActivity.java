@@ -9,13 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
 
-class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnCheckedChangeListener{
-
-    LinearLayout ll;
+public class MyActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +23,32 @@ class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnC
 
         initializeGood();
 
-        ((Button)findViewById(R.id.btn_sms)).setOnClickListener(this);
+        Button sms = (Button) findViewById(R.id.btn_sms);
+        sms.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MyActivity.this, SmsList.class);
+                startActivity(intent);
+            }
+        });
 
-
-        ll = (LinearLayout) findViewById(R.id.linearLayout);
-
-        RadioGroup rg1 = (RadioGroup) findViewById(R.id.RadioGroup1);
-        rg1.setOnCheckedChangeListener(this);
+        Button camera = (Button) findViewById(R.id.btn_camera);
+        camera.setOnClickListener(new Button.OnClickListener()  {
+            public void onClick(View v) {
+                Intent intent = new Intent(MyActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initializeGood()
     {
         InitializationRunnable init = new InitializationRunnable();
         new Thread(init).start();
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 
     class InitializationRunnable implements Runnable
@@ -64,30 +73,6 @@ class MyActivity extends Activity implements View.OnClickListener,RadioGroup.OnC
         }
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup arg0, int arg1) {
-        // TODO Auto-generated method stub
-
-        switch (arg1) {
-
-            case R.id.radioButton4:
-
-                ll.setBackgroundResource(R.drawable.main);
-
-                break;
-
-            case R.id.radioButton5:
-
-                ll.setBackgroundResource(R.drawable.main2);
-                break;
-
-        }
-    }
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent(MyActivity.this, SmsList.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
