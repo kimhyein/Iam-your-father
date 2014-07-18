@@ -21,7 +21,6 @@
 
         <activity android:name=".SplashActivity"/>
 
-        <activity android:name=".CameraActivity"/>
  
 
 
@@ -34,5 +33,13 @@
 
     </application>
 
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.WRITE_SMS" />       //SMS Provider로 전송
+    <uses-permission android:name="android.permission.SEND_SMS" />        //SMS 발송 가능
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />   //수신 모니터링
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+>>>>>>> edcddaf31e2e0e9c21bdfc047d84acb788414111
 
 </manifest>
