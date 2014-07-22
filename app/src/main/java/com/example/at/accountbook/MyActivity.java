@@ -2,6 +2,7 @@ package com.example.at.accountbook;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -10,13 +11,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -32,6 +34,9 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
     public final static int CAMERA_SHOOT = 100; //intent 에 사용될 요청코드
     public final static int GET_PICTURE = 200;
+
+
+
 
     private Bitmap bitmap; // preview 안에 들어갈 이미지.
 
@@ -53,8 +58,20 @@ public class MyActivity extends Activity implements View.OnClickListener{
         Button sms = (Button) findViewById(R.id.btn_sms);
         sms.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MyActivity.this, SmsList.class);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+
+
+                intent.putExtra("address", "15886700");
+
+
+                intent.putExtra("sms_body", "");
+
+                intent.setType("vnd.android-dir/mms-sms");
+
                 startActivity(intent);
+
+
+
             }
         });
 

@@ -3,7 +3,7 @@
     package="com.example.at.accountbook">
 
 
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />   //수신 모니터링
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,10 +21,8 @@
 
         <activity android:name=".SplashActivity"/>
 
- 
 
-
-        <receiver android:name="SmsList" android:enabled="true">
+        <receiver android:name=".SmsList" >
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
 
@@ -33,13 +31,11 @@
 
     </application>
 
-<<<<<<< HEAD
-=======
-    <uses-permission android:name="android.permission.WRITE_SMS" />       //SMS Provider로 전송
-    <uses-permission android:name="android.permission.SEND_SMS" />        //SMS 발송 가능
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />   //수신 모니터링
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" >
+    </uses-permission>  //수신 모니터링
     <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
->>>>>>> edcddaf31e2e0e9c21bdfc047d84acb788414111
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 
 </manifest>
