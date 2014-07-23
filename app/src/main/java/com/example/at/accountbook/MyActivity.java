@@ -128,6 +128,24 @@ public class MyActivity extends Activity implements View.OnClickListener{
             }
         });
 
+
+
+        Button cash = (Button) findViewById(R.id.btn_cash);
+        cash.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent_cash = new Intent(MyActivity.this, cashActivity.class);
+                startActivity(intent_cash);
+            }
+        });
+
+        Button card = (Button) findViewById(R.id.btn_card);
+        card.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent_card = new Intent(MyActivity.this, cardActivity.class);
+                startActivity(intent_card);
+            }
+        });
+
     }
 
     // 3. =================================================

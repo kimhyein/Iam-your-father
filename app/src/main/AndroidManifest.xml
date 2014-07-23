@@ -20,7 +20,8 @@
         </activity>
 
         <activity android:name=".SplashActivity"/>
-
+        <activity android:name=".cashActivity"/>
+        <activity android:name=".cardActivity"/>
 
         <receiver android:name=".SmsList" >
             <intent-filter>
