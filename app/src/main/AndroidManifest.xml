@@ -22,7 +22,7 @@
         <activity android:name=".SplashActivity"/>
         <activity android:name=".cashActivity"/>
         <activity android:name=".cardActivity"/>
-
+        
         <receiver android:name=".SmsList" >
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>

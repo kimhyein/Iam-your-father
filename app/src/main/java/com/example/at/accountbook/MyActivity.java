@@ -19,11 +19,25 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
 
@@ -34,6 +48,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
     public final static int CAMERA_SHOOT = 100; //intent 에 사용될 요청코드
     public final static int GET_PICTURE = 200;
+
 
 
 
@@ -54,7 +69,6 @@ public class MyActivity extends Activity implements View.OnClickListener{
         initializeGood();
 
 
-
         Button sms = (Button) findViewById(R.id.btn_sms);
         sms.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -67,20 +81,20 @@ public class MyActivity extends Activity implements View.OnClickListener{
         });
 
         Button camera = (Button) findViewById(R.id.btn_camera);
-        camera.setOnClickListener(new Button.OnClickListener()  {
+        camera.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 // sd 카드의 mount 여부 검사.
-                if( Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ){
+                if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                     // sd 카드 경로 가져오기
                     String SD_path = Environment.getExternalStorageDirectory().getAbsolutePath(); //sd 카드 루트경로.
                     SD_path += "/testCamera"; // 사용할 폴더. 경로만 지정한것이지 실제로 폴더가 생기거나 한건 아니다.
 
                     // sd 카드에 사용할 폴더있는지 검사후 없으면 생성.
                     File photoFile = new File(SD_path);
-                    if(!photoFile.exists()){
+                    if (!photoFile.exists()) {
                         toLog("Image directory does not exist!!! new make directory");
                         photoFile.mkdir();
-                    }else{
+                    } else {
                         toLog("(File)photoFile : " + photoFile.getPath());
                     }
                     toLog("(String)SD_path : " + SD_path);
@@ -102,7 +116,7 @@ public class MyActivity extends Activity implements View.OnClickListener{
                     Intent intent_Camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     intent_Camera.putExtra(MediaStore.EXTRA_OUTPUT, photo_uri);
                     startActivityForResult(intent_Camera, CAMERA_SHOOT);
-                }else{
+                } else {
                     // sd 카드가 없으면 내부 메모리에 저장해도 되긴 한다.
                     // 그러나 나는 사용하지 못하게 하겠다.
                     toAlert("SD카드가 장착되어 있지 않습니다.");
@@ -120,7 +134,6 @@ public class MyActivity extends Activity implements View.OnClickListener{
         });
 
 
-
         Button cash = (Button) findViewById(R.id.btn_cash);
         cash.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -136,8 +149,8 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 startActivity(intent_card);
             }
         });
-
     }
+
 
     // 3. =================================================
     //	3번이라고 하지만 사실 정확하게 3번은 아니다.
