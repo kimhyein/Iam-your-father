@@ -59,19 +59,10 @@ public class MyActivity extends Activity implements View.OnClickListener{
         sms.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-
-
                 intent.putExtra("address", "15886700");
-
-
                 intent.putExtra("sms_body", "");
-
                 intent.setType("vnd.android-dir/mms-sms");
-
                 startActivity(intent);
-
-
-
             }
         });
 
