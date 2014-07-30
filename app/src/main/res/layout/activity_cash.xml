@@ -6,14 +6,25 @@
     android:layout_width="fill_parent"
 
     android:layout_height="fill_parent"
-    android:background="@drawable/main">
+    android:background="@drawable/main"
+    android:id="@+id/listView1">
 
     <ListView
-        android:id="@+id/listView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp" />
+        android:id="@+id/listView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="158dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="input"
+        android:id="@+id/btn_input"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:singleLine="false"
+        android:background="@drawable/icon"/>
 </RelativeLayout>

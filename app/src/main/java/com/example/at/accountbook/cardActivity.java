@@ -1,8 +1,11 @@
 package com.example.at.accountbook;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
 
 /**
@@ -17,5 +20,14 @@ public class cardActivity extends Activity {
         //해당하는 xml파일 명으로 바꿔야함
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_card);
+
+        Button card_in = (Button) findViewById(R.id.btn_input2);
+        card_in.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent card_intent = new Intent(cardActivity.this, inputActivity.class);
+                startActivity(card_intent);
+            }
+        });
+
     }
 }

@@ -1,7 +1,9 @@
 package com.example.at.accountbook;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
 
@@ -42,6 +44,13 @@ public class cashActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_cash);
 
+        Button cash_in = (Button) findViewById(R.id.btn_input);
+        cash_in.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent cash_intent = new Intent(cashActivity.this, inputActivity.class);
+                startActivity(cash_intent);
+            }
+        });
 
     }
 
